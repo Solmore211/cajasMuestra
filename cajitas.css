@@ -1,0 +1,109 @@
+html {
+  margin: 0;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+background-color: orange;
+}
+
+header {
+  background-color: black;
+  color: white;
+}
+
+.flex-padre {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-decoration: none;
+}
+
+
+.flex-hijo-1,
+.flex-hijo-2,
+.flex-hijo-3,
+.flex-hijo-4 {
+    
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+  background-color: gray;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+
+}
+
+.container-grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  background-color: lightsalmon;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100% 100%;
+}
+
+.grid-item-2 {
+  width: 100%;
+  height:50%;
+}
+
+.padre-flex{     /*PASO 1: .contenedor es para linkear con el html*/
+  width: 100%;
+  height: 500px;
+  background-color:rgb(107, 126, 236);
+  display: flex;
+
+  /*eje principal */
+  flex-direction:column;
+
+  /*alineo completo de los hijos en el eje principal*/
+  justify-content: space-around;
+
+  /*eje secundario: para alinear los hijos*/
+  align-items:flex-start;
+
+}
+                      /*PASO 2: elegir color para caja caja / flex start queda arriba*/
+.hijo-flex-1 {      
+  background-color:rgb(236, 233, 75);  
+  display: flex;          /*hay que poner flex al 1 para que los otros hijos hereden esa propiedad*/
+  order: 1;
+ /* align-self: flex-start;*/
+}
+
+.hijo-flex-2 {
+  background-color: rgb(227, 198, 34);
+  display: flex;
+  order: 2;
+}
+
+.hijo-flex-3 {
+  background-color:rgb(213, 213, 12);
+  display: flex;
+  order: 3;
+/*   align-self: flex-end (queda abajo);*/
+} 
+
+.hijo-flex-4 {
+  background-color:rgb(244, 205, 88);
+  display: flex;
+  order: 4;
+  /*align-self: flex-end;*/ 
+}
+                          /*PASO 3: formato de las cajitas*/
+.hijo-flex-1,
+.hijo-flex-2,
+.hijo-flex-3,
+.hijo-flex-4 {
+  width: 600px;
+  height: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 4px solid yellow;
+  border-radius: 20px;
+  box-sizing: border-box;
+} 
